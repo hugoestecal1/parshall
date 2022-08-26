@@ -1,0 +1,62 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2206                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      nut;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -1 0 0 0 0];
+
+internalField   uniform 7.1079E-05;
+
+boundaryField
+{
+
+    concreteWall
+    {
+        type            nutkRoughWallFunction;
+        Ks              uniform 0.0015;
+        Cs              uniform 0.5;
+        value           $internalField; //viscosidad cinematica
+    }
+    pipe1
+    {
+        type            nutkRoughWallFunction;
+        Ks              uniform 0.0015;
+        Cs              uniform 0.5;
+        value           $internalField; //viscosidad cinematica
+    }
+    pipe2
+    {
+        type            nutkRoughWallFunction;
+        Ks              uniform 0.0015;
+        Cs              uniform 0.5;
+        value           $internalField; //viscosidad cinematica
+    }
+    restante
+    {
+        type            nutkRoughWallFunction;
+        Ks              uniform 0.0015;
+        Cs              uniform 0.5;
+        value           $internalField; //viscosidad cinematica
+    }
+
+    ".*"
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+
+}
+
+
+// ************************************************************************* //

@@ -1,0 +1,26 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      blockMeshDict;
+}
+vertices
+(
+  (-0.00814 -0.00814 -0.16814)
+  (5.70814 -0.00814 -0.16814)
+  (5.70814 0.08954 -0.16814)
+  (-0.00814 0.08954 -0.16814)
+  (-0.00814 -0.00814 0.18014)
+  (5.70814 -0.00814 0.18014)
+  (5.70814 0.08954 0.18014)
+  (-0.00814 0.08954 0.18014)
+);
+blocks
+(
+  hex (0 1 2 3 4 5 6 7) (213 4 13) simpleGrading (1 1 1)
+);
+edges ();
+patches ();
+mergePatchPairs ();
